@@ -19,7 +19,7 @@ define(
 
                     // events
                     document.addEventListener('keydown', function( e ){
-                        if (self.gameover){
+                        if (gamestate.isGameOver){
                             return;
                         }
                         switch ( e.keyCode ){
@@ -36,6 +36,13 @@ define(
                             break;
                             case 32: // space
                                 player.shoot();
+                            break;
+                            case 27: // escape
+                                if (gamestate.isPaused) {
+                                    gamestate.unpause();
+                                } else {
+                                    gamestate.pause();
+                                }
                             break;
                         }
                         return false;
@@ -57,6 +64,8 @@ define(
                                 player.turn( 0 );
                             break;
                             case 32: // space
+                            break;
+                            case 27: // escape
                             break;
                         }
                         return false;
@@ -96,23 +105,32 @@ define(
 
                         // if we aren't looking at pickups
                         // and one of these bodies is the player...
-                        if ( col.bodyA.gameType !== 'pickup' && 
+                        if ( col.bodyA.gameType !== 'planet' && 
+                            col.bodyB.gameType !== 'planet' &&
+                            col.bodyA.gameType !== 'pickup' && 
                             col.bodyB.gameType !== 'pickup' && 
                             (col.bodyA === player || col.bodyB === player) 
                         ){
+                            // collisions with the base should dock the spaceship
                             if ( col.bodyA.gameType === 'base' ||
                                  col.bodyB.gameType === 'base'
                             ){
                               gamestate.onDock()
                             }
+                            // collisions with anything else should blow up the spaceship
                             else{
-                              player.blowUp();
-                              world.removeBehavior( this );
-                              this.gameover = true;
+                              if ( gamestate._shipShield ){
+                                setTimeout(function(){gamestate._shipShield = false;}, 1000);
+                                player.disableShield();
+                              } else {
+                                player.blowUp();
+                                world.removeBehavior( this );
+                                this.gameover = true;
 
-                              // when we crash, we'll publish an event to the world
-                              // that we can listen for to prompt to restart the game
-                              world.publish('lose-game');
+                                // when we crash, we'll publish an event to the world
+                                // that we can listen for to prompt to restart the game
+                                world.publish('lose-game');
+                              }
                               return;
     
                             }

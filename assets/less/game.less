@@ -23,6 +23,8 @@ body:after {
 
 body {
 		background-color: #000040;
+		background: url(../../images/stars.png) 0 0 repeat;
+		background-position: 0px 0px;
 }
 
 .overlay {
@@ -33,11 +35,57 @@ body {
     margin: 80px auto;
 }
 
-.btnContainer {
-	display:inline-block;
-	margin-top: 1em;
+.nav-game {
+	position:absolute;
+	right:0px;
+}
+
+.touchcontrol {
+	position:absolute;
+	z-index:999;
+	font-size:250%;
 	color:#fff;
-	#restartGameBtn {
+	top:30%;
+	font-size: 37px;
+
+  #control-left {
+  	background-image:url('../../images/arrows-02.png');
+    background-position: 32px center;
+    background-repeat: no-repeat;
+    height: 64px;
+    padding: 64px;
+    width: 64px;
+  }
+  #control-right{
+  	background-image:url('../../images/arrows-01.png');
+    background-position: 32px center;
+    background-repeat: no-repeat;
+    height: 64px;
+    padding: 64px;
+    width: 64px;
+  }
+
+	&.panel-right {
+		right:0px;
+	}
+
+	div {
+		padding:1em;
+		background:#ffcf00;
+		opacity:0.8;
+		margin: 4px 0px;
+		&:hover,
+		&:active {
+		  color:#000;
+		  opacity:0.9;
+		}
+	}
+
+}
+
+.btnContainer {
+	#restartGameBtn,
+	#pause {
 		display:none;
 	}
 }
@@ -63,4 +111,29 @@ body {
 		margin-bottom:0px;
 		 vertical-align: bottom;
 	}
+}
+
+
+table.scores {
+	td, th {
+		padding:2px 5px;
+	}
+	.element {
+		font-weight:bold;
+	}
+}
+.totalscore {
+	background-color:#eee; padding:0.5em; margin: 0px; text-align:right; font-size:200%;
+}
+
+div.achievements {
+	div.row {
+		opacity:0.2;
+		i { opacity:0; }
+		&.achieved {
+			opacity:1;
+			i { opacity:1; }
+		}
+	}
+
 }

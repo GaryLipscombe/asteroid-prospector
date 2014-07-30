@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="images/ship.png">
-    <title>Asteroid Prospector | Progress</title>
+  <link rel="icon" type="image/png" href="images/ship.png">
+  <title>Asteroid Prospector | Home</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:200,400" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/style.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -17,90 +19,197 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body id="bg">
-		<div id="wrap">
-			<div id="header">
-				<h1>Asteroid Prospector</h1>
-			</div>
-				
-			<div id="sidebar">
-				<ul>
-					<li><a href="game.html"><button type="button" style="width:100%;" class="btn btn-success btn-lg">Play</button></a></li><br>
-					<li><a href="index.html"><button type="button" style="width:100%;" class="btn btn-info">Home</button></a></li>
-					<li><a href="story.html"><button type="button" style="width:100%;" class="btn btn-info">Story</button></a></li>
-					<li><a href="credits.html"><button type="button" style="width:100%;" class="btn btn-info">Credits</button></a></li>
-					<li><a href="versions.html"><button type="button" style="width:100%;" class="btn btn-info">Versions</button></a></li>
-					<li><a href="http://asteroidprospectorexeter.tumblr.com"><button type="button" style="width:100%;" class="btn btn-info">Team Tumblr</button></a></li>
-					<li><a href="https://github.com/killfall/asteroid-prospector"><button type="button" style="width:100%;" class="btn btn-info">GitHub</button></a></li>
-					<li><a href="https://2014.spaceappschallenge.org/challenge/asteroid-prospector"><button type="button" style="width:100%;" class="btn btn-info">The Challenge</button></a></li>
-				</ul>
-			</div>
-			
-			<div id="main">
-				<h3>Credits</h3>
-					
-					<p>The following people have been involved in this project:</p>
-					<h5>Game coding</h5>
-						<ul>
-							<li>Jacob Tomlinson (Project team leader)</li>
-							<li>Karina Williams</li>
-							<li>Kris Sum</li>
-						</ul>
-					<h5>Game graphics</h5>
-						<ul>
-							<li>Oli Bird</li>
-						</ul>
-					<h5>Website</h5>
-						<ul>
-							<li>Gary Lipscombe</li>
-							<li>Ian Gentry</li>
-						</ul>
-					<h5>Story</h5>
-						<ul>
-							<li>Alexander Barry</li>
-							<li>Faith Yemofio</li>
-							<li>Jack Livsey</li>
-							<li>Joanne Livsey</li>
-							<li>Ketaki Sharma</li>
-							<li>Paul Rogers</li>
-						</ul>
-					<h5>Research</h5>
-						<ul>
-							<li>Alexander Barry</li>
-							<li>Faith Yemofio</li>
-							<li>Jack Livsey</li>
-							<li>Joanne Livsey</li>
-							<li>Ketaki Sharma</li>
-							<li>Paul Rogers</li>
-						</ul>
-					<h5>Testing</h5>
-						<ul>
-							<li>Alexander Barry</li>
-							<li>Faith Yemofio</li>
-							<li>Gary Lipscombe</li>
-							<li>Jack Livsey</li>
-							<li>Jacob Tomlinson</li>
-							<li>Karina Williams</li>
-							<li>Ketaki Sharma</li>
-							<li>Kris Sum</li>
-							<li>Oli Bird</li>
-							<li>Paul Rogers</li>
-						</ul>
-					<h5>Social Media</h5>
-						<ul>
-							<li>Adrian Wood</li>
-						</ul>
-					<h5>Presentation</h5>
-						<ul>
-							<li>Adrian Wood</li>
-						</ul>
-					<h5>Translations</h5>
-						<ul>
-							<li>Elena Meneguz - IT</li>
-							<li>Karina Williams - DE</li>
-						</ul>
-			</div>
-	</div>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span><i class="fa fa-bars fa-2x"></i></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="info.html">Info</a></li>
+            <li><a href="credits.html">Credits</a></li>
+            <li><a href="versions.html">Versions</a></li>
+            <li><a href="original/">Original Site</a></li>
+            <li><a href="https://2014.spaceappschallenge.org/challenge/asteroid-prospector">The Challenge</a></li>
+            <li><a href="https://2014.spaceappschallenge.org/project/asteroid-prospector-exeter/">Our Submission</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <img class="logo-ship" src="images/ship-thrust-angle.png" />
+        <h1>Credits</h1>
+
+        <table class="credits">
+          <tr>
+            <td class="credits-left">
+              Jacob Tomlinson
+              <a href="https://twitter.com/_JacobTomlinson" target="_new"><i class="fa fa-twitter"></i></a>
+              <a href="http://www.jacobtomlinson.co.uk/" target="_new"><i class="fa fa-globe"></i></a>
+            </td>
+            <td class="credits-right">
+              Team Leader<br />
+              Project Management<br />
+              JavaScript Development
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Ian Gentry
+              <a href="https://twitter.com/iangentry" target="_new"><i class="fa fa-twitter"></i></a>
+            </td>
+            <td class="credits-right">
+              Project Management<br />
+              Web Development
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Oli Bird
+              <a href="http://obirddesign.co.uk/" target="_new"><i class="fa fa-globe"></i></a>
+            </td>
+            <td class="credits-right">
+              Graphic Design
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Kris Sum
+              <a href="https://twitter.com/switchsystems" target="_new"><i class="fa fa-twitter"></i></a>
+            </td>
+            <td class="credits-right">
+              JavaScript Development
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Karina Williams
+            </td>
+            <td class="credits-right">
+              JavaScript Development<br />
+              German Translation
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Gary Lipscombe
+            </td>
+            <td class="credits-right">
+              Web Development
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Adrian Wood
+            </td>
+            <td class="credits-right">
+              Social Media<br />
+              Promotion
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Alexander Barry
+            </td>
+            <td class="credits-right">
+              Testing<br />
+              Story
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Faith Yemofio
+            </td>
+            <td class="credits-right">
+              Testing<br />
+              Story
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Jack Livsey
+            </td>
+            <td class="credits-right">
+              Research<br />
+              Story
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Joanne Livsey
+              <a href="https://twitter.com/jolivsey" target="_new"><i class="fa fa-twitter"></i></a>
+            </td>
+            <td class="credits-right">
+              Research<br />
+              Story
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Ketaki Sharma
+            </td>
+            <td class="credits-right">
+              Testing<br />
+              Story<br />
+              Hindi Translation
+            </td>
+          </tr>
+          <tr>
+            <td class="credits-left">
+              Paul Rogers
+              <a href="https://twitter.com/rogers492" target="_new"><i class="fa fa-twitter"></i></a>
+            </td>
+            <td class="credits-right">
+              Research<br />
+              Story
+            </td>
+          </tr>
+        </table>
+
+        <h2>Special thanks to</h2>
+        <table class="credits">
+          <tr>
+            <td class="credits-left">Elena Meneguz</td>
+            <td class="credits-right">Italian Translation</td>
+          </tr>
+          <tr>
+            <td class="credits-left">Anke Finnenkötter</td>
+            <td class="credits-right">German Translation</td>
+          </tr>
+          <tr>
+            <td class="credits-left">Franck Davanier</td>
+            <td class="credits-right">French Translation</td>
+          </tr>
+        </table>
+
+        <p class="social">
+          <a href="http://asteroidprospectorexeter.tumblr.com" target="_new"><i class="fa fa-tumblr fa-2x"></i></a>
+          <a href="http://www.twitter.com/APEMining" target="_new"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="https://www.youtube.com/channel/UCaFdlzqFGWucaYjafSM1D4A" target="_new"><i class="fa fa-youtube fa-2x"></i></a>
+          <a href="https://github.com/killfall/asteroid-prospector" target="_new"><i class="fa fa-github-alt fa-2x"></i></a>
+        </p>
+      </div>
+
+    </div><!-- /.container -->
+
+    <footer>
+
+        <small><i>A <a href="https://2014.spaceappschallenge.org/project/asteroid-prospector-exeter/">NASA Space Apps</a> project.</i></small>
+
+    </footer>
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -112,10 +221,9 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-49829161-1', 'killfall.github.io');
+      ga('create', 'UA-49829161-1', 'ape-mining.com');
       ga('send', 'pageview');
 
     </script>
   </body>
 </html>
-

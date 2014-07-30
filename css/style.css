@@ -1,67 +1,256 @@
-#bg {
-	color: #EDEBEB;
-	background-image:url("../webimages/asteroid.png");
-	position: absolute;
+body {
+  	background-position: center top;
+  	background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+	margin-bottom: 0px;
+}
+
+h1 {
+	margin-top: 10px;
+	font-size: 40px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200;
+}
+
+h1 small {
+	font-size: 20px;
+}
+
+h2 {
+	margin-top: 10px;
+	font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200;
+}
+
+a, a:active {
+	color: #00002a;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #00002a;
+}
+
+li a, li a:active {
+	color: #333333;
+}
+
+li a:hover {
+	color: #000000;
+}
+
+footer {
+	background-color: #b0b0cb;
+  	background-image: url("../images/background-light.png");
+  	background-position: center top;
+  	background-repeat: no-repeat;
+  	padding-left: 10px;
+  	padding-right: 10px;
+  	text-align: center;
+}
+
+.navbar-collapse {
+	background-color: #FFFFFF;
+}
+
+.lead {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.lead-minor {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.logo-ship {
+	margin-top: 10px;
+	height: 50px;
+	width: 50px;
+}
+
+.starter-template {
+  text-align: center;
+}
+
+.fa-2x {
+	font-size: 1.5em;
+}
+
+.social {
+
+}
+
+.social i {
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.social a, .social a:active {
+	color: #333333;
+	text-decoration: none;
+}
+
+.social .fa {	
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.social .fa:hover {
+	color: #ff9933;
+}
+
+.submission {
+	font-size: 14px;
+}
+
+.submission .separator {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.credits-left {
+	text-align: right;
+	vertical-align: top;
+	width: 50%;
+	padding-right: 10px;
+}
+
+.credits-right {
+	text-align: left;
+	vertical-align: top;
+	width: 50%;
+	padding-left: 10px;
+}
+
+.credits {
 	width: 100%;
-	height: 100%;
-	max-height: 1500px;
 }
 
-#wrap {
-	width: 1000px;
+.credits tr td {
+	padding-bottom: 10px;
 }
 
-#header {
-	position: fixed;
-	padding-left: 40px;
-	background-color:rgba(0,0,0,1);
+.credits .fa-twitter {
+	color: #0084b4;
+}
+
+.credits .fa-globe{
+	color: #329432;
+}
+
+.versions ul {
+    list-style:none;
+    padding-left:0;
+}
+
+.versions img {
 	width: 100%;
-	min-width: 900px;
-	background-image:url("../webimages/header.png");
-	background-position:right;
-	background-repeat: no-repeat;
+	margin-bottom: 10px;
 }
 
-#header a {
-	color: #EDEBEB;
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 760px) {
+	body {
+		margin-top: 50px;
+		font-size: 24px;
+	}
+
+	h1 {
+		font-size: 80px;
+	}
+
+	h2 {
+		font-size: 60px;
+	}
+
+	li {
+		font-size: 14px;
+	}
+
+	footer {
+		font-size: 14px;
+	}
+
+	.fa-2x {
+		font-size: 2em;
+	}
+
+	.logo-ship {
+		margin-top: 10px;
+		height: 70px;
+		width: 70px;
+	}
+
+	.navbar-nav{
+	    margin: 0 auto;
+	    display: table;
+	    table-layout: fixed;
+	    float:none;
+	}
+
+	.social i {
+		padding-top: 20px;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 20px;
+	}
+
+	.lead-minor {
+	    font-size: 24px;
+	}
+
+	.btn-lg {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		padding-top: 25px;
+		height: 100px;
+		width: 300px;
+		font-size: 32px;
+	}
+
+	.submission {
+		font-size: 24px;
+	}
+
+	.credits tr td {
+		padding-bottom: 20px;
+	}
 }
 
-#sidebar {
-	position: static;
-	margin-top: 100px;
-	background-color:rgba(0,0,0,0.75);
-	float: left;
+@media (min-width: 795px) {
 }
 
-#sidebar li {
-	list-style: none;
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+	li {
+		background-color: transparent;
+	}
+
+	h1 {
+		font-size: 120px;
+	}
+
+	.logo {
+		margin-top: 30px;
+		height: 180px;
+		width: 180px;
+	}
+
+	.versions img {
+		width: auto;
+	}
+
 }
 
-#sidebar h6 {
-	margin-left: 40px;
-}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 
-#main {
-	background-color:rgba(0,0,0,0.6);
-	padding-top: 75px;
-	width: 800px;
-	margin-bottom: 40px;
-	float: right;
-}
-
-#main img {
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-#progress {
-	max-width: 640px;
-}
-
-#versionTable li {
-	list-style: none;
-}
-
-#footer {
-	width: auto;
 }

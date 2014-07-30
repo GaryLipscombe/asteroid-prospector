@@ -1,0 +1,187 @@
+body {
+	background-color: #00002a;
+  	background-image: url("../images/background.png");
+  	background-position: center top;
+  	background-repeat: no-repeat;
+  	color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+}
+
+h1 {
+	font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200;
+}
+
+a, a:active {
+	color: #ff9933;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ff9933;
+}
+
+li a, li a:active {
+	color: #FFFFFF;
+}
+
+li a:hover {
+	color: #000000;
+}
+
+.navbar-collapse {
+	background-color: #00002a;
+}
+
+.lead {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.lead-minor {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.logo {
+	margin-top: 10px;
+	height: 100px;
+	width: 100px;
+}
+
+.starter-template {
+  text-align: center;
+}
+
+.btn-lg {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	height: 50px;
+	width: 150px;
+	background-color: transparent;
+	border-color: #FFFFFF;
+	color: #FFFFFF;
+	font-size: 18px;
+}
+
+.fa-2x {
+	font-size: 1.5em;
+}
+
+.social i {
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.social a, .social a:active {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.social .fa {	
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.social .fa:hover {
+	color: #ff9933;
+}
+
+.submission {
+	font-size: 14px;
+}
+
+.submission .separator {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 760px) {
+	body {
+		margin-bottom: 50px;
+    	margin-top: 50px;
+	}
+
+	h1 {
+		font-size: 80px;
+	}
+
+	.fa-2x {
+		font-size: 2em;
+	}
+
+	.logo {
+		margin-top: 30px;
+		height: 140px;
+		width: 140px;
+	}
+
+	.navbar-nav{
+	    margin: 0 auto;
+	    display: table;
+	    table-layout: fixed;
+	    float:none;
+	}
+
+	.social i {
+		padding-top: 20px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.lead-minor {
+	    font-size: 24px;
+	}
+
+	.btn-lg {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		padding-top: 25px;
+		height: 100px;
+		width: 300px;
+		font-size: 32px;
+	}
+
+	.submission {
+		font-size: 24px;
+	}
+}
+
+@media (min-width: 795px) {
+	.navbar-collapse {
+		background-color: transparent;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+	li {
+		background-color: transparent;
+	}
+
+	h1 {
+		font-size: 120px;
+	}
+
+	.logo {
+		margin-top: 30px;
+		height: 180px;
+		width: 180px;
+	}
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

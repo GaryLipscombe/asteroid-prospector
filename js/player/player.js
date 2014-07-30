@@ -15,8 +15,18 @@ define(
             var deg = Math.PI/180;
             var shipImg = new Image();
             var shipThrustImg = new Image();
+            var shipShieldImg = new Image();
+            var shipShieldThrustImg = new Image();
             shipImg.src = require.toUrl('images/ship.png');
             shipThrustImg.src = require.toUrl('images/ship-thrust.png');
+            shipShieldImg.src = require.toUrl('images/ship-shield.png');
+            shipShieldThrustImg.src = require.toUrl('images/ship-thrust-shield.png');
+
+            currentShipImg = shipImg;
+            currentShipThrustImg = shipThrustImg;
+
+            var podImg = new Image();
+            podImg.src = require.toUrl('images/pod.png');
 
             var Pi2 = 2 * Math.PI;
             // VERY crude approximation to a gaussian random number.. but fast
@@ -57,7 +67,8 @@ define(
                     // set the rendering image
                     // because of the image i've chosen, the nose of the ship
                     // will point in the same angle as the body's rotational position
-                    this.view = shipImg;
+                    this.view = currentShipImg;
+                    this.enableShield();
                 },
                 // this will turn the ship by changing the
                 // body's angular velocity to + or - some amount
@@ -80,8 +91,8 @@ define(
                     amount *= 0.0001;
                     // point the acceleration in the direction of the ship's nose
                     var v = scratch.vector().set(
-                        amount * Math.cos( angle ), 
-                        amount * Math.sin( angle ) 
+                        amount * Math.cos( angle ),
+                        amount * Math.sin( angle )
                     );
                     // accelerate self
                     this.accelerate( v );
@@ -89,9 +100,9 @@ define(
 
                     // if we're accelerating set the image to the one with the thrusters on
                     if ( amount ){
-                        this.view = shipThrustImg;
+                        this.view = currentShipThrustImg;
                     } else {
-                        this.view = shipImg;
+                        this.view = currentShipImg;
                     }
                     return self;
                 },
@@ -99,6 +110,9 @@ define(
                 // that travels away from the ship's front.
                 // It will get removed after a timeout
                 shoot: function(){
+                	gamestate.soundShoot.pause();
+                	//gamestate.soundShoot.currentTime = 0;
+                	gamestate.soundShoot.play();
                     var self = this;
                     var world = this._world;
                     if (!world){
@@ -148,7 +162,7 @@ define(
                     var verts;
                     var d;
                     var debris = [];
-                    
+
                     // create debris
                     while ( n-- ){
                         verts = rndPolygon( size, 3, 1.5 ); // get a random polygon
@@ -173,12 +187,53 @@ define(
                         }
                     }
 
+                    this.launchPod();
+
                     // add debris
                     world.add( debris );
                     // remove player
                     world.removeBody( this );
                     scratch.done();
                     return self;
+                },
+                launchPod: function(){
+                    var self = this;
+                    var world = this._world;
+                    if (!world){
+                        return self;
+                    }
+                    var scratch = Physics.scratchpad();
+                    var rnd = scratch.vector();
+                    var r = 2 * this.geometry.radius; // circumference
+                    var pos = this.state.pos;
+                    var d;
+
+                    rnd.set( Math.random() - 0.5, Math.random() - 0.5 ).mult( r );
+                    d = Physics.body('circle', {
+                        x: pos.get(0) + rnd.get(0),
+                        y: pos.get(1) + rnd.get(1),
+                        // velocity of debris is same as player
+                        vx: this.state.vel.get(0),
+                        vy: this.state.vel.get(1),
+                        // set a random angular velocity for dramatic effect
+                        angularVelocity: (Math.random()-0.5) * 0.006,
+                        mass: 1,
+                        size: 10,
+                        // not tooo bouncy
+                        restitution: 0.8
+                    });
+                    d.gameType = 'pod';
+                    d.view = podImg;
+                    world.add( d );
+
+                },
+                enableShield: function(){
+                    currentShipImg = shipShieldImg;
+                    currentShipThrustImg = shipShieldThrustImg;
+                },
+                disableShield: function(){
+                    currentShipImg = shipImg;
+                    currentShipThrustImg = shipThrustImg;
                 }
             };
         });
